@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smiley Face</title>
+	<style>
+		canvas {
+			background-color: #90ee90;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="400"></canvas>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		// Draw the smiley face
+		ctx.beginPath();
+		ctx.arc(200, 200, 150, 0, Math.PI * 2);
+		ctx.fillStyle = "#ffff00";
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.arc(138, 138, 10, 0, Math.PI * 2);
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.arc(262, 138, 10, 0, Math.PI * 2);
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.beginPath();
+        ctx.moveTo(200, 180);
+        ctx.lineTo(200, 230);
+        ctx.strokeStyle = "#000000"; // 设置线条颜色为黑色
+        ctx.stroke(); // 绘制线条轮廓
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(200, 200, 80, 0.2 * Math.PI, 0.8 * Math.PI); 
+        ctx.strokeStyle = "#000000"; // 设置线条颜色为黑色
+        ctx.stroke(); // 绘制圆弧
+        ctx.closePath();
+
+		// Add the text
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "#008000";
+		ctx.fillText("The Canvas brought me to life!", 70, 380);
+	</script>
+</body>
+</html>
